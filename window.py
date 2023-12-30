@@ -29,6 +29,25 @@ radio_group.addButton(btn2)
 radio_group.addButton(btn3)
 radio_group.addButton(btn4)
 
+
+group_box = QGroupBox("Варіанти перекладу")
+col1 = QVBoxLayout()
+col2 = QVBoxLayout()
+
+col1.addWidget(btn1)
+col1.addWidget(btn2)
+col2.addWidget(btn3)
+col2.addWidget(btn4)
+
+row2.addLayout(col1)
+row2.addLayout(col2)
+
+group_box.setLayout(row2)
+
+answer_btn = QPushButton()
+
 main_line = QVBoxLayout()
 main_line.addLayout(row1)
-
+main_line.addWidget(question_lb)
+main_line.addWidget(group_box)
+main_line.addWidget(answer_btn)
