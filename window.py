@@ -43,11 +43,23 @@ row2.addLayout(col1)
 row2.addLayout(col2)
 
 group_box.setLayout(row2)
+# ПАНЕЛЬ РЕЗУЛЬТАТУ
+result_box = QGroupBox("Результат")
+result_text = QLabel("Правильно")
+right_answer_text = QLabel("відповідь")
 
-answer_btn = QPushButton()
+result_line = QVBoxLayout()
+result_line.addWidget(result_text)
+result_line.addWidget(right_answer_text, alignment=Qt.AlignCenter, stretch=2)
+
+result_box.setLayout(result_line)
+result_box.hide()
+
+answer_btn = QPushButton("Відповісти")
 
 main_line = QVBoxLayout()
-main_line.addLayout(row1)
-main_line.addWidget(question_lb)
-main_line.addWidget(group_box)
-main_line.addWidget(answer_btn)
+main_line.addLayout(row1, stretch = 1)
+main_line.addWidget(question_lb, stretch = 2, alignment=Qt.AlignCenter)
+main_line.addWidget(group_box, stretch = 6)
+main_line.addWidget(result_box, stretch = 6)
+main_line.addWidget(answer_btn, stretch = 3)
